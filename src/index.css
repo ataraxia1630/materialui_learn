@@ -11,3 +11,117 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* --------------------APP BAR COMPPONENT---------------------- */
+.AppBar {
+  background-color: rgba(236, 244, 214, 0.5);
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  justify-content: space-between;
+}
+
+.AvatarContainer,
+.Icon,
+.LeftSide {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px; /* Khoảng cách giữa các avatar */
+  align-items: center;
+}
+
+.Avatar {
+}
+
+.AppBar .ProjectTitle {
+  /* border: 2px solid black; */
+}
+
+/* --------------------PROCESS COMPONENT---------------------- */
+.Process {
+  background-color: transparent;
+}
+
+.Process h3 {
+  margin-left: 40px;
+}
+
+.Process .Main {
+  gap: 40px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: auto;
+  margin-left: 70px;
+}
+
+/* --------------------COLUMN COMPONENT---------------------- */
+
+.Column {
+  background-color: rgba(154, 208, 194, 0.1);
+  border-radius: 20px;
+  width: 228px;
+  min-width: 228px;
+  height: 326px;
+  display: flex;
+  padding: 1.5rem;
+}
+
+.Column .Title {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px black solid; */
+}
+
+.Column .AddIcon {
+  height: 24px;
+  /* border: 1px black solid; */
+}
+
+.Column .Main {
+  flex: 1;
+}
+
+/* --------------------FILE COMPONENT---------------------- */
+
+.File {
+  width: 201px;
+  height: 248px;
+  background-color: rgba(154, 208, 194, 0.3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.FileManager {
+  background-color: transparent;
+  margin-top: 20px;
+}
+
+.FileManager .Files {
+  margin-left: 70px;
+}
+
+.FileManager .Title {
+  margin-left: 40px;
+}
+
+/* --------------------MAIN---------------------- */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.main {
+  flex: 1;
+  background-color: rgba(154, 208, 194, 0.05);
+  /* opacity: 0.05; */
+}
+
+.main .filemanager {
+}
