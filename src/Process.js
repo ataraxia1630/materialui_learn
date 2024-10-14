@@ -8,6 +8,7 @@ export default function Process(props) {
       <h3>Process 1</h3>
       <Stack direction="row" className="Main">
         {props.columns.map((column) => {
+          console.log(column.name);
           return <Column title={column.title} key={column.id}></Column>;
         })}
       </Stack>

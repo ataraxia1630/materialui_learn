@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import AppBar from './AppBar';
-import Process from './Process';
-import { Button } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import FileManager from './FileManager';
+import Dashboard from './Dashboard';
+import { Link, Route, Routes } from 'react-router-dom';
 
 export default function App() {
   var projectName = 'Project Name';
@@ -62,32 +59,46 @@ export default function App() {
   const files = [
     {
       id: 0,
-      name: 'File bao cao',
+      name: 'File word',
+    },
+    {
+      id: 1,
+      name: 'File pdf',
+    },
+    {
+      id: 2,
+      name: 'File ppt',
+    },
+    {
+      id: 3,
+      name: 'File png',
+    },
+    {
+      id: 4,
+      name: 'File mp3',
+    },
+    {
+      id: 5,
+      name: 'File mp4',
     },
   ];
 
   return (
     <div className="app">
-      <div className="appbar">
-        <AppBar projectName={projectName} users={users}></AppBar>
-      </div>
-      <div className="main">
-        <Process columns={columns}></Process>
-        <Button
-          variant="contained"
-          className="add_process"
-          endIcon={<AddIcon />}
-          sx={{
-            backgroundColor: 'rgba(235, 244, 214, 0.5)',
-            color: 'black',
-            marginLeft: '40px',
-            marginTop: '30px',
-          }}
-        >
-          Add process
-        </Button>
-        <FileManager files={files} className="filemanager"></FileManager>
-      </div>
+      <Routes>
+        <Route path="" element={<Link to="/dashboard">Dashboard</Link>}></Route>
+        <Route
+          path="/dashboard"
+          element={
+            <Dashboard
+              projectName={projectName}
+              users={users}
+              columns={columns}
+              files={files}
+            ></Dashboard>
+          }
+        ></Route>
+      </Routes>
     </div>
   );
 }
