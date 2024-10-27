@@ -63,9 +63,10 @@ code {
 .Board .Main {
   gap: 40px;
   display: flex;
-  flex-wrap: nowrap;
-  overflow: auto;
+  /* flex-wrap: nowrap; */
+  overflow-x: auto;
   margin-left: 70px;
+  align-items: flex-start; /* cai nay fix bug loi scale height ne */
 }
 /* --------------------DASH BOARD COMPONENT---------------------- */
 .BoardSelect {
@@ -80,13 +81,11 @@ code {
   border-radius: 20px;
   width: 228px;
   min-width: 228px;
-  min-height: 326px;
-  max-height: 100%;
-  display: flex;
   padding: 1.5rem;
+  /* min-height: 200px; */
 }
 
-.Column .Title {
+.Column .Top .Title {
   height: 30px;
   display: flex;
   align-items: center;
@@ -94,16 +93,18 @@ code {
   /* border: 1px black solid; */
 }
 
-.Column .Main {
+.Column .Top .Main {
   display: flex;
   flex-direction: column;
   margin: 0px;
   gap: 0px;
+  overflow: auto;
+  /* flex-grow: 1; not this one */
 }
 
 .Task {
   /* border: black solid 1px; */
-  height: 50px;
+  min-height: 50px;
 }
 
 /* --------------------FILE COMPONENT---------------------- */

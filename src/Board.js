@@ -27,15 +27,12 @@ export default function Board(props) {
 
   return (
     <Stack direction="column" className="Board">
-      {/* <h3>Board 1</h3> */}
       <Stack direction="row" className="Main">
         {columns.map((column) => {
           return (
             <Column
               title={column.title}
-              key={column.id} // test kĩ vì hàm delete sẽ làm thay đổi id => key cũng phải đổi
-              // nếu không sẽ có 2 cái bị trùng key (nếu thêm column mới)
-              // nên đổi set id theo cách khác
+              key={column.id}
               tasks={column.tasks}
               delete={() => DeleteColumn(column.id)}
             ></Column>

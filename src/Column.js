@@ -30,39 +30,58 @@ export default function Column(props) {
   };
 
   return (
-    <Stack direction="column" className="Column" draggable>
-      <Stack className="Title" direction="row">
-        <Input value={title} onChange={handleChange} />
-        <MoreIcon />
-      </Stack>
-      <Stack className="Main">
-        {tasks.map((task) => {
-          return (
-            <Task
-              title={task.title}
-              key={task.id}
-              id={task.id}
-              className="Task"
-              delete={() => DeleteTask(task.id)}
-            ></Task>
-          );
-        })}
+    <Stack
+      className="Column"
+      draggable
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+
+        /* dang dung theo thong so tren may, can dieu chinh lai */
+      }} // not this one
+    >
+      <Stack className="Top">
+        <Stack className="Title" direction="row">
+          <Input value={title} onChange={handleChange} />
+          <MoreIcon />
+        </Stack>
+        <Stack
+          className="Main"
+          sx={{
+            height: 'auto',
+          }}
+        >
+          {tasks.map((task) => {
+            return (
+              <Task
+                title={task.title}
+                key={task.id}
+                id={task.id}
+                className="Task"
+                delete={() => DeleteTask(task.id)}
+              ></Task>
+            );
+          })}
+        </Stack>
       </Stack>
       <Stack
+        className="Bottom"
         direction="row"
         sx={{
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: 'space-between', // cho 2 cai icon nam o 2 ben
           height: '24px',
           width: '100%',
-          //border: 'solid black 1px',
+          // border: 'solid black 1px',
+          marginTop: '1.5rem', // not this one
         }}
       >
-        <Button onClick={AddTask}>
+        <Button onClick={AddTask} title="add">
           <AddIcon className="Icon" />
         </Button>
 
-        <Button onClick={props.delete}>
+        <Button onClick={props.delete} title="delete">
           <DeleteIcon className="Icon" />
         </Button>
       </Stack>
