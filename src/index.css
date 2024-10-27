@@ -23,38 +23,54 @@ code {
   justify-content: space-between;
 }
 
+.AppBar .LeftSide {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: start;
+}
+
+.AppBar .LeftSide .Others .MeetLink,
+.AppBar .LeftSide .Others .FileManager {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.ProjectName {
+  text-decoration: none;
+  color: inherit;
+}
+
 .AvatarContainer,
 .Icon,
-.LeftSide {
+.RightSide {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   gap: 10px; /* Khoảng cách giữa các avatar */
-  align-items: center;
 }
 
-.Avatar {
-}
-
-.AppBar .ProjectTitle {
-  /* border: 2px solid black; */
-}
-
-/* --------------------PROCESS COMPONENT---------------------- */
-.Process {
+/* --------------------BOARD COMPONENT---------------------- */
+.Board {
   background-color: transparent;
 }
 
-.Process h3 {
+/* .Board h3 {
   margin-left: 40px;
-}
+} */
 
-.Process .Main {
+.Board .Main {
   gap: 40px;
   display: flex;
   flex-wrap: nowrap;
   overflow: auto;
   margin-left: 70px;
+}
+/* --------------------DASH BOARD COMPONENT---------------------- */
+.BoardSelect {
+  margin-left: 40px;
+  border: solid black 1px;
 }
 
 /* --------------------COLUMN COMPONENT---------------------- */
@@ -64,7 +80,8 @@ code {
   border-radius: 20px;
   width: 228px;
   min-width: 228px;
-  height: 326px;
+  min-height: 326px;
+  max-height: 100%;
   display: flex;
   padding: 1.5rem;
 }
@@ -77,13 +94,16 @@ code {
   /* border: 1px black solid; */
 }
 
-.Column .AddIcon {
-  height: 24px;
-  /* border: 1px black solid; */
+.Column .Main {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+  gap: 0px;
 }
 
-.Column .Main {
-  flex: 1;
+.Task {
+  /* border: black solid 1px; */
+  height: 50px;
 }
 
 /* --------------------FILE COMPONENT---------------------- */
@@ -105,6 +125,9 @@ code {
 
 .FileManager .Files {
   margin-left: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .FileManager .Title {
@@ -124,4 +147,5 @@ code {
 }
 
 .main .filemanager {
+  background-color: transparent;
 }

@@ -6,9 +6,9 @@ export default function FileManager(props) {
   return (
     <Stack className="FileManager">
       <h3 className="Title">FILES</h3>
-      <Stack className="Files">
+      <Stack className="Files" direction="row">
         {props.files.map((file) => {
-          return <File />;
+          return <File key={file.id} />;
         })}
       </Stack>
     </Stack>

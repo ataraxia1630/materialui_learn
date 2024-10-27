@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
+import Dashboard from './Dashboard';
+import { Link, Route, Routes } from 'react-router-dom';
+import Meeting from './Meeting';
 import AppBar from './AppBar';
-import Process from './Process';
-import { Button } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
 import FileManager from './FileManager';
 
 export default function App() {
@@ -35,34 +35,417 @@ export default function App() {
     },
   ];
 
-  const columns = [
-    {
-      id: 0,
-      title: 'TO DO',
-      tasks: [],
-    },
+  const boards = [
     {
       id: 1,
-      title: 'DOING',
+      title: 'Board 1',
+      columns: [
+        {
+          id: 0,
+          title: 'TO DO board 1',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+        {
+          id: 1,
+          title: 'DOING',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: 'DONE',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: 'PLANNING',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: 'OTHERS',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 2,
-      title: 'DONE',
+      title: 'Board 2',
+      columns: [
+        {
+          id: 0,
+          title: 'TO DO board 2',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+        {
+          id: 1,
+          title: 'DOING',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: 'DONE',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: 'PLANNING',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: 'OTHERS',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 3,
-      title: 'PLANNING',
+      title: 'Board 3',
+      columns: [
+        {
+          id: 0,
+          title: 'TO DO board 3',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+        {
+          id: 1,
+          title: 'DOING',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+        {
+          id: 2,
+          title: 'DONE',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+        {
+          id: 3,
+          title: 'PLANNING',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+        {
+          id: 4,
+          title: 'OTHERS',
+          tasks: [
+            {
+              id: 0,
+              title: 'Learn JS',
+            },
+            {
+              id: 1,
+              title: 'Learn C#',
+            },
+            {
+              id: 2,
+              title: 'Learn PHP',
+            },
+          ],
+        },
+      ],
     },
     {
       id: 4,
-      title: 'OTHERS',
+      title: 'Board 4',
+      columns: [
+        // {
+        //   id: 0,
+        //   title: 'board 4 TO DO',
+        //   tasks: [
+        //     {
+        //       id: 0,
+        //       title: 'Learn JS',
+        //     },
+        //     {
+        //       id: 1,
+        //       title: 'Learn C#',
+        //     },
+        //     {
+        //       id: 2,
+        //       title: 'Learn PHP',
+        //     },
+        //   ],
+        // },
+        // {
+        //   id: 1,
+        //   title: 'DOING',
+        //   tasks: [
+        //     {
+        //       id: 0,
+        //       title: 'Learn JS',
+        //     },
+        //     {
+        //       id: 1,
+        //       title: 'Learn C#',
+        //     },
+        //     {
+        //       id: 2,
+        //       title: 'Learn PHP',
+        //     },
+        //   ],
+        // },
+        // {
+        //   id: 2,
+        //   title: 'DONE',
+        //   tasks: [
+        //     {
+        //       id: 0,
+        //       title: 'Learn JS',
+        //     },
+        //     {
+        //       id: 1,
+        //       title: 'Learn C#',
+        //     },
+        //     {
+        //       id: 2,
+        //       title: 'Learn PHP',
+        //     },
+        //   ],
+        // },
+        // {
+        //   id: 3,
+        //   title: 'PLANNING',
+        //   tasks: [
+        //     {
+        //       id: 0,
+        //       title: 'Learn JS',
+        //     },
+        //     {
+        //       id: 1,
+        //       title: 'Learn C#',
+        //     },
+        //     {
+        //       id: 2,
+        //       title: 'Learn PHP',
+        //     },
+        //   ],
+        // },
+        // {
+        //   id: 4,
+        //   title: 'OTHERS',
+        //   tasks: [
+        //     {
+        //       id: 0,
+        //       title: 'Learn JS',
+        //     },
+        //     {
+        //       id: 1,
+        //       title: 'Learn C#',
+        //     },
+        //     {
+        //       id: 2,
+        //       title: 'Learn PHP',
+        //     },
+        //   ],
+        // },
+      ],
     },
   ];
 
   const files = [
     {
       id: 0,
-      name: 'File bao cao',
+      name: 'File word',
+    },
+    {
+      id: 1,
+      name: 'File pdf',
+    },
+    {
+      id: 2,
+      name: 'File ppt',
+    },
+    {
+      id: 3,
+      name: 'File png',
+    },
+    {
+      id: 4,
+      name: 'File mp3',
+    },
+    {
+      id: 5,
+      name: 'File mp4',
     },
   ];
 
@@ -71,23 +454,24 @@ export default function App() {
       <div className="appbar">
         <AppBar projectName={projectName} users={users}></AppBar>
       </div>
-      <div className="main">
-        <Process columns={columns}></Process>
-        <Button
-          variant="contained"
-          className="add_process"
-          endIcon={<AddIcon />}
-          sx={{
-            backgroundColor: 'rgba(235, 244, 214, 0.5)',
-            color: 'black',
-            marginLeft: '40px',
-            marginTop: '30px',
-          }}
-        >
-          Add process
-        </Button>
-        <FileManager files={files} className="filemanager"></FileManager>
-      </div>
+      <Routes>
+        <Route path="" element={<Link to="/dashboard">Dashboard</Link>}></Route>
+        <Route
+          path="/dashboard"
+          element={
+            <Dashboard
+              projectName={projectName}
+              boards={boards}
+              files={files}
+            ></Dashboard>
+          }
+        ></Route>
+        <Route path="/meeting" element={<Meeting />}></Route>
+        <Route
+          path="/filemanager"
+          element={<FileManager files={files} />}
+        ></Route>
+      </Routes>
     </div>
   );
 }
